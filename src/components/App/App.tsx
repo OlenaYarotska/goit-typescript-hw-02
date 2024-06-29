@@ -8,7 +8,6 @@ import ImageModal from '../ImageModal/ImageModal';
 import Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { Image } from './App.types';
-import { fetchDataResults } from './App.types';
 import css from './App.module.css';
 
 const App: React.FC = () => {
@@ -31,7 +30,7 @@ const App: React.FC = () => {
       try {
         setLoading(true);
         setError(false)
-        const data: fetchDataResults = await fetchData(query, page, per_page);
+        const data = await fetchData(query, page, per_page);
         setImages((prevState) => [...prevState, ...data.results]);
         setTotalResults(data.total)
       } catch (error) {

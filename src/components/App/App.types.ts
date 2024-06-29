@@ -6,8 +6,3 @@ export interface Image {
     small: string
   }
 };
-
-export interface fetchDataResults {
-  results: Image[];
-  total: number;
-};
